@@ -1,7 +1,7 @@
 public class Agent {
     private float opinion;
-    private final float threshold;
-    private final float convergence;
+    private float threshold;
+    private float convergence;
 
     public Agent(float opinion, float threshold, float convergence) {
         this.opinion = opinion;
@@ -15,6 +15,14 @@ public class Agent {
     }
     public float getOpinion() {
         return this.opinion;
+    }
+
+    public void changeThreshold(float newThreshold) {
+        this.threshold = newThreshold;
+    }
+
+    public void changeConvergence(float newConvergence) {
+        this.convergence = newConvergence;
     }
     private void opinionAdjust(float agents_opinion) {
         this.opinion = this.opinion + this.convergence * (agents_opinion - this.opinion);
